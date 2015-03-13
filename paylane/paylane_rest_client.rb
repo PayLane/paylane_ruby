@@ -235,6 +235,14 @@ module PayLane
       request_method('post', params)
     end
 
+    # Cancels Paypal recurring profile
+    #
+    # @param params [Hash] Paypal params Hash
+    # @return [Hash] Parsed JSON response
+    def paypal_stop_recurring(params)
+      connection('paypal/stopRecurring')
+      request_method('post', params)
+    end
 
     private
 
