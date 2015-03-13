@@ -163,6 +163,14 @@ module PayLane
       request_method('post', params)
     end
 
+    # Card sale by token
+    #
+    # @param params [Hash] Card sale params Hash
+    # @return [Hash] Parsed JSON response
+    def card_sale_by_token(params)
+      connection('cards/saleByToken')
+      request_method('post', params)
+    end
 
     # Card authorization
     #
@@ -170,6 +178,15 @@ module PayLane
     # @return [Hash] Parsed JSON response
     def card_authorization(params)
       connection('cards/authorization')
+      request_method('post', params)
+    end
+
+    # Card authorization by token
+    #
+    # @param params [Hash] Card authorization params Hash
+    # @return [Hash] Parsed JSON response
+    def card_authorization_by_token(params)
+      connection('cards/authorizationByToken')
       request_method('post', params)
     end
 
@@ -200,6 +217,14 @@ module PayLane
       request_method('get', params)
     end
 
+    # Checks if card is 3-D Secure
+    #
+    # @param params [Hash] 3-D Secure Card params Hash
+    # @return [Hash] Parsed JSON response
+    def check_card_3d_secure_by_token(params)
+      connection('3DSecure/checkCardByToken')
+      request_method('get', params)
+    end
 
     # Sale by 3-D Secure authorization
     #
@@ -209,7 +234,6 @@ module PayLane
       connection('3DSecure/authSale')
       request_method('post', params)
     end
-
 
     private
 
