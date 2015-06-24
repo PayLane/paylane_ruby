@@ -154,6 +154,24 @@ module PayLane
       request_method('post', params)
     end
 
+    # iDeal sale
+    #
+    # @param params [Hash] iDeal transaction params
+    # @return [Hash] Parsed JSON response
+    def ideal_sale(params)
+      connection('ideal/sale')
+      request_method('post', params)
+    end
+
+
+    # iDeal bank list
+    #
+    # @return [Hash] Parsed JSON response
+    def ideal_bank_codes()
+      connection('ideal/bankcodes')
+      request_method('get')
+    end
+
     # Card sale
     #
     # @param params [Hash] Card sale params Hash
