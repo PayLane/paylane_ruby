@@ -1,5 +1,5 @@
 # Client library for Paylane REST Server.
-# More info at: http://devzone.paylane.com 
+# More info at: http://devzone.paylane.com
 
 require 'rubygems'
 require 'net/https'
@@ -259,6 +259,24 @@ module PayLane
     # @return [Hash] Parsed JSON response
     def paypal_stop_recurring(params)
       connection('paypal/stopRecurring')
+      request_method('post', params)
+    end
+
+    # Performs Apple Pay sale
+    #
+    # @param params [Hash] Apple Pay sale params Hash
+    # @return [Hash] Parsed JSON response
+    def apple_pay_sale(params)
+      connection('applepay/sale')
+      request_method('post', params)
+    end
+
+    # Performs Apple Pay authorization
+    #
+    # @param params [Hash] Apple Pay authorization params Hash
+    # @return [Hash] Parsed JSON response
+    def apple_pay_authorization(params)
+      connection('applepay/authorization')
       request_method('post', params)
     end
 
