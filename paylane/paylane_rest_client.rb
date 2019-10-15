@@ -253,6 +253,14 @@ module PayLane
       request_method('post', params)
     end
 
+    # Authorize by 3-D Secure authorization
+    #
+    # @param params [Hash] 3-D Secure Card params Hash
+    # @return [Hash] Parsed JSON response
+    def authorize_by_3d_secure_authorization(params)
+      connection('3DSecure/auth')
+      request_method('post', params)
+    end
     # Cancels Paypal recurring profile
     #
     # @param params [Hash] Paypal params Hash
